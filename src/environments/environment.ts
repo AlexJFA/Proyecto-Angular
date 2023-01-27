@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  
+  // declaramos una constante con la configuracion de proyecto firebase
+
+
   production: false
+
 };
 
 /*

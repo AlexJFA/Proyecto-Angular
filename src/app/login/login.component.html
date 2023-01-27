@@ -1,0 +1,27 @@
+<br />
+<div class="container">
+  <!-- declaramos nuestro "#formulario" y este sera de tipo "ngForm"  y la directiva "ngSubmit" llamara al metodo "ingresar"
+       al cual le pasamos por parametro el "formulario" -->
+  <form  #formulario="ngForm" (ngSubmit)="ingresar(formulario)" >
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        aria-describedby="emailHelp"
+        name="email"
+        ngModel
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" name="password" ngModel />
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary" >Enviar</button>
+  </form>
+</div>

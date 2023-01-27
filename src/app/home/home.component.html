@@ -1,0 +1,88 @@
+<div class="container0">
+  <div class="container1">
+    <div class="titulos">
+      <h1 style="color: brown; text-align: center">{{ titulo }}</h1>
+      <br />
+      <h4 style="color: brown; text-align: center">
+        Registre un nuevo usuario
+      </h4>
+    </div>
+  </div>
+
+  <div class="contForm">
+    <form class="form">
+      <label for="nombre"
+        >Nombre
+        <input
+          type="text"
+          name="nombre"
+          id="nombre"
+          [(ngModel)]="itemNombre"
+          class="form-control"
+          placeholder="Introduzca nombre" /></label
+      ><br />
+      <label for="apellido"
+        >Apellido
+        <input
+          type="text"
+          name="apellido"
+          id="apellido"
+          [(ngModel)]="itemApellido"
+          class="form-control"
+          placeholder="Introduzca apellido" /></label
+      ><br />
+      <label for="cargo"
+        >Cargo
+        <input
+          type="text"
+          name="cargo"
+          id="cargo"
+          [(ngModel)]="itemCargo"
+          class="form-control"
+          placeholder="Introduzca cargo" /></label
+      ><br />
+      <label for="sueldo"
+        >Sueldo
+        <input
+          type="number"
+          name="sueldo"
+          id="sueldo"
+          [(ngModel)]="itemSueldo"
+          class="form-control"
+          placeholder="Introduzca sueldo" /></label
+      ><br /><br />
+
+      <input
+        type="submit"
+        value="Registar"
+        (click)="registrar()"
+        class="btn btn-success"
+      />
+    </form>
+  </div>
+
+  <!-- este es el componente hijo y dentro de el  implementamos 2 variables  "item" y "i" que shacen refencia a las variable del "ngFor".
+  haciendo que estas variables sean accesible desde el componente hijo -->
+
+  <div class="container2">
+    <h2
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: brown;
+      "
+    >
+      A continuación el componente Hijo y nieto
+    </h2>
+
+    <app-comp-hijo
+      style="display: flex; justify-content: center; align-items: center"
+      *ngFor="let item of empleados; let i = index"
+      [item]="item"
+      [i]="i"
+    >
+      <app-comp-nieto></app-comp-nieto>
+    </app-comp-hijo>
+  </div>
+</div>

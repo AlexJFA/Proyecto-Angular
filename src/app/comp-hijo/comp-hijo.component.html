@@ -1,0 +1,50 @@
+<div class="container">
+  <h6 style="color: brown">Soy el componente hijo</h6>
+
+  <div class="empleado" style="font-weight: bold">
+
+        
+  <!-- activamos la redireccion de router al compónente actualizar pasandole como parametro el indicenque es la variable  "i" 
+  y tambien usando queryParams enviando el dato accion a traves de la url -->
+  <a href="" [queryParams]="{accion:1}" [routerLink]="['/actualiza', i]">Actualizar</a> &nbsp; &nbsp;
+  <a href="" [queryParams]="{accion:2}" [routerLink]="['/actualiza', i]">Eliminar</a>
+  <br>
+  
+
+    <!-- activamos la redireccion de router al compónente actualizar pasandole como parametro el indicenque es la variable  "i" -->
+    <a
+      href=""
+      [routerLink]="['/actualiza', i]"
+      routerLinkActive="router-link-active"
+    >
+      Trabajador {{ i + 1 }}:
+      <!--aplicamos directiva ngClass con  una condicion llamando a la clase que "Progamador" que definimos en nuestro archivo CSS.-->
+      <span [ngClass]="{ programador: item.cargo == 'Programador' }">
+        {{ item.nombre }} {{ item.apellido }}.
+      </span>
+
+      Cargo: {{ item.cargo }}.
+      <!--aplicamos directiva ngStyle con  una copndicion con operador ternario.-->
+      Sueldo.
+      <span [ngStyle]="{ color: item.sueldo < 800 ? 'red' : 'chartreuse' }">
+        <strong>{{ item.sueldo }} </strong>
+      </span>
+    </a>
+  </div>
+
+  <div class="caracteristicas">
+    <!-- iteramos sobre el "arrayCaracteristica" que se encuentra en el componente hijo el cual se ira rellenando con los
+    datos del componente nieto. -->
+    <h6>Características:</h6>
+    <ul style="list-style: none">
+      <li *ngFor="let item of arrayCaracteristica">{{ item }}</li>
+    </ul>
+
+    <!-- llamanmos a nuestra propiedad "caracteristicaEmpleados" (esto es lo que llamamos un event-Binding), 
+    esta propiedad se encuentra en nuestro componente nieto el cual sera igual a
+    "agragarCaracteristica" que es un metodo que se ejecuta en el componente hijo -->
+    <app-comp-nieto
+      (caracteristicaEmpleados)="agragarCaracteristica($event)"
+    ></app-comp-nieto>
+  </div>
+</div>

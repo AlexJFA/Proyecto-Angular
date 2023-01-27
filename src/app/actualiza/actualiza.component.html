@@ -1,0 +1,90 @@
+<div class="container1">
+  <div class="titulos">
+    <h1 style="color: brown; text-align: center">{{ titulo }}</h1>
+  </div>
+
+  <form class="form">
+    <label for="nombre"
+      >Nombre
+      <input
+        type="text"
+        name="nombre"
+        id="nombre"
+        [(ngModel)]="empleado.nombre"
+        class="form-control"
+        placeholder="Introduzca nombre" /></label
+    ><br />
+    <label for="apellido"
+      >Apellido
+      <input
+        type="text"
+        name="apellido"
+        id="apellido"
+        [(ngModel)]="empleado.apellido"
+        class="form-control"
+        placeholder="Introduzca apellido" /></label
+    ><br />
+    <label for="cargo"
+      >Cargo
+      <input
+        type="text"
+        name="cargo"
+        id="cargo"
+        [(ngModel)]="empleado.cargo"
+        class="form-control"
+        placeholder="Introduzca cargo" /></label
+    ><br />
+    <label for="sueldo"
+      >Sueldo
+      <input
+        type="number"
+        name="sueldo"
+        id="sueldo"
+        [(ngModel)]="empleado.sueldo"
+        class="form-control"
+        placeholder="Introduzca sueldo" /></label
+    ><br /><br />
+
+    <input
+      type="submit"
+      value="Actualizar"
+      (click)="actualizar()"
+      class="btn btn-success"
+    />
+    <br />
+    <br />
+    <button
+      type="submit"
+      value="Eliminar"
+      (click)="eliminar()"
+      class="btn btn-success"
+    >
+      Eliminar
+    </button>
+
+    <br />
+    <br />
+
+    <div *ngIf="accion != undefined">
+      <h4>Soy el botor de queryParams</h4>
+      <button
+        *ngIf="accion == 1"
+        type="submit"
+        value="accion"
+        (click)="accionEmpleado()"
+        class="btn btn-success"
+      >
+        Acción actualizar
+      </button>
+      <button
+        *ngIf="accion == 2"
+        type="submit"
+        value="accion"
+        (click)="accionEmpleado()"
+        class="btn btn-success"
+      >
+        Acción Eliminar
+      </button>
+    </div>
+  </form>
+</div>

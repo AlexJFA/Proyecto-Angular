@@ -1,0 +1,12 @@
+<div style="background-color: rgb(177, 177, 175); border: solid 1.4px black; margin: 0.5rem;">
+  <h6 style="color: brown ;">Soy el componente nieto</h6>
+  <label> "Agregar Característica " </label>
+  <input type="text" #newCaracteristica />
+  <button
+    type="submit"
+    (click)="agregarCaracteristica(newCaracteristica.value)"
+    class="btn btn-primary"
+  >
+    Agregar
+  </button>
+</div>

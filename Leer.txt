@@ -1,0 +1,23 @@
+En este proyecto implementamos lo siguiente:
+
+Directivas estructurales como ngFor, ngIf. 
+
+Capturas de evntos, inyeccion de dependencias, y uso de modelos.
+
+Metodos para compartir datos entre padre e hijo como "Input" y "Ouput".
+
+Modale	s de Boostrap y Material.
+
+Observables para compartir datos entre componentes.
+
+Servicios para imprementacion de "CRUD" con firebase.
+
+Implementacion de routing compartiendo y capturando datos a travez de la URL con directivas 
+como "RouteLink" y "queryParams".
+
+
+ 
+
+
+
+ 
